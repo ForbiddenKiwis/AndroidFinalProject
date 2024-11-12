@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "166538050557",
+    "firebase_url": "https://advfirebase20241023kiwi-default-rtdb.firebaseio.com",
+    "project_id": "advfirebase20241023kiwi",
+    "storage_bucket": "advfirebase20241023kiwi.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166538050557:android:a8523c99817af848dbf794",
+        "android_client_info": {
+          "package_name": "com.example.prjadvancefirebaseoct23"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOehO3iksslWjdyYI8P-l_BuUJOWJhz4Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:166538050557:android:ae51aa847dfb1c0adbf794",
+        "android_client_info": {
+          "package_name": "com.example.project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAOehO3iksslWjdyYI8P-l_BuUJOWJhz4Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
