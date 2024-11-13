@@ -1,10 +1,12 @@
 package com.example.project;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,9 +35,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MainMenu extends AppCompatActivity {
+public class MainMenu extends AppCompatActivity implements View.OnClickListener{
 
     TextView tvUserName;
+    ImageView imgVProfile;
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainMenuBinding binding;
@@ -93,6 +96,9 @@ public class MainMenu extends AppCompatActivity {
 
     private void initialize() {
         tvUserName = binding.navView.getHeaderView(0).findViewById(R.id.tvUserName);
+        imgVProfile = binding.navView.getHeaderView(0).findViewById(R.id.imgVProfile);
+
+        imgVProfile.setOnClickListener(this);
 
         personDatabase = FirebaseDatabase.getInstance().getReference("Person");
 
@@ -100,7 +106,20 @@ public class MainMenu extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
         personId = getIntent().getIntExtra("personId", -1);
 
+
         loadName(personId);
+    }
+
+    @Override
+    public void onClick(View view) {
+        imgVProfile.setOnClickListener(v -> goToProfile());
+    }
+
+    private void goToProfile() {
+        Intent intent = new Intent(MainMenu.this, Profile.class);
+        intent.putExtra("personId",personId);
+        startActivity(intent);
+        finish();
     }
 
     private void loadName(int personId) {
