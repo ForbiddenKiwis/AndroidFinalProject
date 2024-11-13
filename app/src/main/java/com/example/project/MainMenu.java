@@ -2,12 +2,16 @@ package com.example.project;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.navigation.NavigationView;
+
+import androidx.annotation.StringRes;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -23,8 +27,11 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -37,14 +44,13 @@ public class MainMenu extends AppCompatActivity {
 
     SharedPreferences sharedPreferences;
     private int personId;
-    private int userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-     binding = ActivityMainMenuBinding.inflate(getLayoutInflater());
-     setContentView(binding.getRoot());
+        binding = ActivityMainMenuBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMainMenu.toolbar);
         binding.appBarMainMenu.fab.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +61,9 @@ public class MainMenu extends AppCompatActivity {
                         .setAnchorView(R.id.fab).show();
             }
         });
+
         initialize();
+
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
@@ -83,16 +91,40 @@ public class MainMenu extends AppCompatActivity {
                 || super.onSupportNavigateUp();
     }
 
-    private void initialize(){
-        tvUserName = findViewById(R.id.tvUserName);
+    private void initialize() {
+        tvUserName = binding.navView.getHeaderView(0).findViewById(R.id.tvUserName);
 
         personDatabase = FirebaseDatabase.getInstance().getReference("Person");
 
         // Keep the user Id throughout the app
         sharedPreferences = getSharedPreferences("MyAppPrefs", MODE_PRIVATE);
-        userId = sharedPreferences.getInt("userId",-1);
-        personId = getIntent().getIntExtra("personId",-1);
+        personId = getIntent().getIntExtra("personId", -1);
 
-        //tvUserName = sharedPreferences.getString("name", "");
+        loadName(personId);
+    }
+
+    private void loadName(int personId) {
+        personDatabase.child(String.valueOf(personId)).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()){
+                    String name = snapshot.child("name").getValue(String.class);
+
+                    tvUserName.setText(name);
+
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("name", name);
+                    editor.apply();
+                } else {
+                    Log.e("Initialize", "No data available for personId: " + personId);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Log.e("Initialize", "Database error: " + error.getMessage());
+            }
+        });
+
     }
 }
