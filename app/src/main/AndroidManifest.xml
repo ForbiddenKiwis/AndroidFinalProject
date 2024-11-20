@@ -13,15 +13,6 @@
         android:theme="@style/Theme.Project"
         tools:targetApi="31">
         <activity
-            android:name=".ActivityHistory"
-            android:exported="false" />
-        <activity
-            android:name=".ui.home.slideRecycler.SlideRecycler"
-            android:exported="false" />
-        <activity
-            android:name=".DayCardView"
-            android:exported="false" />
-        <activity
             android:name=".Profile"
             android:exported="false" />
         <activity
