@@ -5,60 +5,50 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundGreen"
     tools:context=".CreateAccount">
 
-    <TextView
-        android:id="@+id/tvTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Fitness App"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+    <ImageView
+        android:id="@+id/Carrot2"
+        android:layout_width="407dp"
+        android:layout_height="284dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
-
-    <TextView
-        android:id="@+id/tvCreateAccountTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Create Account"
-        android:textStyle="bold"
-        android:textSize="25sp"
-        android:layout_marginTop="80dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/carrottop" />
 
     <TextView
         android:id="@+id/tvCreateAccountUserId"
+        style="@style/Text_Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:text="User Id : "
-        style="@style/Text_Style"
-        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.33"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCreateAccountTitle"/>
+        app:layout_constraintTop_toBottomOf="@+id/Carrot2" />
 
     <TextView
         android:id="@+id/tvCreateAccountUserIdData"
+        style="@style/Text_Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="UserId"
         android:layout_marginTop="0dp"
-        style="@style/Text_Style"
+        android:text="UserId"
         app:layout_constraintStart_toEndOf="@+id/tvCreateAccountUserId"
-        app:layout_constraintTop_toTopOf="@+id/tvCreateAccountUserId"/>
+        app:layout_constraintTop_toTopOf="@+id/tvCreateAccountUserId" />
 
     <TextView
         android:id="@+id/tvPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="8dp"
         android:text="Password : "
-        android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvCreateAccountUserId" />
 
@@ -66,11 +56,11 @@
         android:id="@+id/tvConfirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
         android:text="Confirm Password : "
-        android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
@@ -78,11 +68,11 @@
         android:id="@+id/tvName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
         android:text="First &amp; Last name : "
-        android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvConfirmPassword" />
 
@@ -90,11 +80,11 @@
         android:id="@+id/tvAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="144dp"
+        android:layout_marginTop="8dp"
         android:text="Age : "
-        android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvName" />
 
@@ -102,11 +92,11 @@
         android:id="@+id/tvHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="8dp"
         android:text="Height : "
-        android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvAge" />
 
@@ -114,11 +104,11 @@
         android:id="@+id/tvWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="8dp"
         android:text="Weight : "
-        android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHeight" />
 
@@ -126,108 +116,122 @@
         android:id="@+id/etPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@null"
         android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:background="@null"
-        android:inputType="textPassword"
-        android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@+id/tvPassword"
-        app:layout_constraintTop_toTopOf="@+id/tvPassword"/>
+        app:layout_constraintTop_toTopOf="@+id/tvPassword" />
 
     <EditText
         android:id="@+id/etConfirmPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@null"
         android:hint="Confirm Password"
+        android:inputType="textPassword"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:background="@null"
-        android:inputType="textPassword"
-        android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@+id/tvConfirmPassword"
-        app:layout_constraintTop_toTopOf="@+id/tvConfirmPassword"/>
+        app:layout_constraintTop_toTopOf="@+id/tvConfirmPassword" />
 
     <EditText
         android:id="@+id/etName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@null"
         android:hint="First &amp; Last name"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:background="@null"
-        android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@+id/tvName"
-        app:layout_constraintTop_toTopOf="@+id/tvName"/>
+        app:layout_constraintTop_toTopOf="@+id/tvName" />
 
     <EditText
         android:id="@+id/etAge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@null"
         android:hint="Age"
+        android:inputType="number"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:background="@null"
-        android:inputType="number"
-        android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@+id/tvAge"
-        app:layout_constraintTop_toTopOf="@+id/tvAge"/>
+        app:layout_constraintTop_toTopOf="@+id/tvAge" />
 
     <EditText
         android:id="@+id/etHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@null"
         android:hint="Height"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:background="@null"
-        android:inputType="numberDecimal"
-        android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@+id/tvHeight"
-        app:layout_constraintTop_toTopOf="@+id/tvHeight"/>
+        app:layout_constraintTop_toTopOf="@+id/tvHeight" />
 
     <EditText
         android:id="@+id/etWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@null"
         android:hint="Weight"
+        android:inputType="numberDecimal"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        android:background="@null"
-        android:layout_marginStart="10dp"
-        android:inputType="numberDecimal"
         app:layout_constraintStart_toEndOf="@+id/tvWeight"
-        app:layout_constraintTop_toTopOf="@+id/tvWeight"/>
+        app:layout_constraintTop_toTopOf="@+id/tvWeight" />
 
     <Button
         android:id="@+id/btnCreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="8dp"
         android:text="Create Account"
         android:textColor="@color/black"
         android:textSize="20sp"
+        android:backgroundTint="#a4d4ae"
         android:textStyle="bold"
-
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvWeight" />
 
     <Button
         android:id="@+id/btnCreateAccountReturn"
+        style="@style/Button_Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#a4d4ae"
         android:text="Return"
-        style="@style/Button_Style"
-        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnCreateAccount"/>
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateAccount" />
+
+    <ImageView
+        android:id="@+id/carrotBottom"
+        android:layout_width="319dp"
+        android:layout_height="144dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateAccountReturn"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/carrotbottom" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
