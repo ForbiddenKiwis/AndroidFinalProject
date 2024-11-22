@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.Menu;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
 
     TextView tvUserName;
     ImageView imgVProfile;
+    Button btnHomeBMI;
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainMenuBinding binding;

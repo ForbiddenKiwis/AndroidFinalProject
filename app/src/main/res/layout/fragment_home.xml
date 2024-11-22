@@ -21,5 +21,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent" />
 
+    <Button
+        android:id="@+id/btnHomeBMI"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Find Out Your Bmi"
+        app:layout_constraintBottom_toBottomOf="@+id/text_home"
+        app:layout_constraintEnd_toEndOf="@+id/text_home"
+        app:layout_constraintStart_toStartOf="@+id/text_home"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

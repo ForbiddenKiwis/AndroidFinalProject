@@ -95,7 +95,8 @@ public class CreateAccount extends AppCompatActivity implements View.OnClickList
         int age = Integer.parseInt(etAge.getText().toString().trim());
         float weight = Float.parseFloat(etWeight.getText().toString().trim());
         float height = Float.parseFloat(etHeight.getText().toString().trim());
-        int BMI = 0;
+        float bmi = 0;
+
 
         Person person = new Person(personId, name, age, weight, height);
         User user = new User(userId, password);

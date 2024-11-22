@@ -2,6 +2,7 @@ package model;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Person {
     public int personId;
@@ -10,6 +11,7 @@ public class Person {
     public int age;
     public float weight;
     public float height;
+    public float bmi;
 
     //public ArrayList<>
 
@@ -20,6 +22,7 @@ public class Person {
         this.age = age;
         this.weight = weight;
         this.height = height;
+        this.bmi = bmi;
     }
 
     public Person(){
@@ -35,6 +38,12 @@ public class Person {
                 '}';
     }
 
+
+    public float getBmi() {
+        return bmi;
+    }
+
+    public void setBmi(float bmi){this.bmi =bmi;}
 
     public float getHeight() {
         return height;
