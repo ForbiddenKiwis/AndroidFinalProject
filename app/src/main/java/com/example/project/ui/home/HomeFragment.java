@@ -11,9 +11,16 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import androidx.activity.EdgeToEdge;
 import androidx.annotation.NonNull;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.example.project.BMI;
 import com.example.project.R;
@@ -23,10 +30,18 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class HomeFragment extends Fragment {
 
-    DatabaseReference UserDatabase;
 
+    private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
 
+
+    @Override
+    public void onCreate(Bundle savedInstanceState){
+        super.onCreate(savedInstanceState);
+
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyAppPrefs",
+                MODE_PRIVATE);
+    }
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -37,12 +52,16 @@ public class HomeFragment extends Fragment {
             final TextView textView = binding.textHome;
             homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-        Button btnHomeBMI = binding.btnHomeBMI;
-        btnHomeBMI.setOnClickListener(v -> {
-            Log.d("HomeFragment", "Button clicked");
-            goToBMI();
-        });
+            Button btnGoToBMICalculator = binding.btnGoToBMICalculator;
+            btnGoToBMICalculator.setOnClickListener(view -> goBMI());
+
             return root;
+
+    }
+
+    private void goBMI() {
+        Intent intent = new Intent(requireActivity(), BMI.class);
+        startActivity(intent);
     }
 
     @Override
@@ -50,13 +69,5 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
-
-
-    private void goToBMI() {
-        Intent intent = new Intent(requireActivity(), BMI.class);  // Use requireActivity() instead of getActivity()
-        startActivity(intent);
-    }
-
 
 }

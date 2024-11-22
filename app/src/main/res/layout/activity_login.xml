@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/applicationlogo"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="2dp" />
+        tools:layout_editor_absoluteY="-52dp" />
 
     <TextView
         android:id="@+id/tvLogin"

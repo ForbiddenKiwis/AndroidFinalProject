@@ -42,7 +42,6 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
 
     TextView tvUserName, tvLogOut;
     ImageView imgVProfile;
-    Button btnHomeBMI;
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainMenuBinding binding;
@@ -118,6 +117,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public void onClick(View view) {
+
         imgVProfile.setOnClickListener(v -> goToProfile());
         tvLogOut.setOnClickListener(v-> Logout());
     }
@@ -134,6 +134,7 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
         startActivity(intent);
         finish();
     }
+
 
     private void goToProfile() {
         Intent intent = new Intent(MainMenu.this, Profile.class);
