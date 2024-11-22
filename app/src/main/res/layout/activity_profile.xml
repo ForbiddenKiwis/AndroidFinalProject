@@ -3,9 +3,124 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/backgroundGreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Profile">
+
+    <TextView
+        android:id="@+id/tvDisplayPersonWeightLbl"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="Kg"
+        app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonWeightData"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonAgeLbl" />
+
+    <TextView
+        android:id="@+id/tvDisplayPersonWeightData"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
+        android:text="Weight"
+        app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonWeight"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonAgeData" />
+
+    <TextView
+        android:id="@+id/tvDisplayPersonHeightData"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:text="Height"
+        app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonHeight"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonWeightData" />
+
+    <TextView
+        android:id="@+id/tvDisplayPersonHeightLbl"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:text="cm"
+        app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonHeightData"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonWeightLbl" />
+
+    <Button
+        android:id="@+id/btnDisplayPersonReturn"
+        style="@style/Button_Style"
+        android:layout_width="318dp"
+        android:layout_height="47dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="144dp"
+        android:text="Return"
+        android:backgroundTint="#a4d4ae"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonHeightData" />
+
+    <TextView
+        android:id="@+id/tvDisplayPersonAge"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="12dp"
+        android:text="Age : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonName" />
+
+    <TextView
+        android:id="@+id/tvDisplayPersonWeight"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="12dp"
+        android:text="Weight : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonAge" />
+
+    <TextView
+        android:id="@+id/tvDisplayPersonName"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="12dp"
+        android:text="Person Name : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonTitle" />
+
+    <TextView
+        android:id="@+id/tvDisplayPersonAgeData"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="age"
+        app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonAge"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonName" />
+
+    <TextView
+        android:id="@+id/tvDisplayPersonNameData"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:text="Person"
+        app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonTitle" />
 
     <TextView
         android:id="@+id/tvDisplayPersonTitle"
@@ -14,108 +129,21 @@
         android:text="Profile"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvDisplayPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/Text_Style"
-        android:text="Person Name : "
-        android:layout_marginTop="50dp"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonTitle" />
-
-    <TextView
-        android:id="@+id/tvDisplayPersonAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age : "
-        style="@style/Text_Style"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonName"/>
-
-    <TextView
-        android:id="@+id/tvDisplayPersonWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Weight : "
-        style="@style/Text_Style"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonAge" />
-
-    <TextView
-        android:id="@+id/tvDisplayPersonHeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Height : "
-        style="@style/Text_Style"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonWeight" />
+        tools:layout_editor_absoluteY="353dp" />
 
     <TextView
         android:id="@+id/tvDisplayPersonAgeLbl"
+        style="@style/Text_Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="12dp"
         android:text="years old"
-        style="@style/Text_Style"
-        android:layout_marginTop="0dp"
         app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonAgeData"
-        app:layout_constraintTop_toTopOf="@+id/tvDisplayPersonAgeData"/>
-
-    <TextView
-        android:id="@+id/tvDisplayPersonWeightLbl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kg"
-        style="@style/Text_Style"
-        android:layout_marginTop="0dp"
-        app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonWeightData"
-        app:layout_constraintTop_toTopOf="@+id/tvDisplayPersonWeightData"/>
-
-    <TextView
-        android:id="@+id/tvDisplayPersonHeightLbl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="cm"
-        style="@style/Text_Style"
-        android:layout_marginTop="0dp"
-        app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonHeightData"
-        app:layout_constraintTop_toTopOf="@+id/tvDisplayPersonHeightData"/>
-
-    <TextView
-        android:id="@+id/tvDisplayPersonNameData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Person"
-        style="@style/Text_Style"
-        android:layout_marginTop="0dp"
-        app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonName"
-        app:layout_constraintTop_toTopOf="@+id/tvDisplayPersonName" />
-
-    <TextView
-        android:id="@+id/tvDisplayPersonAgeData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="age"
-        style="@style/Text_Style"
-        android:layout_marginTop="0dp"
-        app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonAge"
-        app:layout_constraintTop_toTopOf="@+id/tvDisplayPersonAge" />
-
-    <TextView
-        android:id="@+id/tvDisplayPersonWeightData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Weight"
-        style="@style/Text_Style"
-        android:layout_marginTop="0dp"
-        app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonWeight"
-        app:layout_constraintTop_toTopOf="@+id/tvDisplayPersonWeight" />
-
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonNameData" />
     <TextView
         android:id="@+id/tvDeleteAccount"
         android:layout_width="wrap_content"
@@ -128,28 +156,39 @@
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonHeight"/>
-
     <TextView
-        android:id="@+id/tvDisplayPersonHeightData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Height"
+        android:id="@+id/tvDisplayPersonHeight"
         style="@style/Text_Style"
-        android:layout_marginTop="0dp"
-        app:layout_constraintStart_toEndOf="@+id/tvDisplayPersonHeight"
-        app:layout_constraintTop_toTopOf="@+id/tvDisplayPersonHeight"/>
-
-    <Button
-        android:id="@+id/btnDisplayPersonReturn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Return"
-        style="@style/Button_Style"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="8dp"
+        android:text="Height : "
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDisplayPersonWeight" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvDisplayPersonTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/profiletop" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.538"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDisplayPersonReturn"
+        app:layout_constraintVertical_bias="0.3"
+        app:srcCompat="@drawable/profilebottom" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
