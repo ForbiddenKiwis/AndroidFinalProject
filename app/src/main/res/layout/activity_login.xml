@@ -3,20 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:background="@color/backgroundGreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
-    <TextView
-        android:id="@+id/tvTitle"
+    <ImageView
+        android:id="@+id/tvLogo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Fitness App"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:srcCompat="@drawable/applicationlogo"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="2dp" />
 
     <TextView
         android:id="@+id/tvLogin"
@@ -25,32 +23,32 @@
         android:text="Login"
         android:textStyle="bold"
         android:textSize="25sp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="-100dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvLogo"
         app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/tvUserId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="28dp"
         android:text="User Id : "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvLogin"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvLogin" />
 
     <TextView
         android:id="@+id/tvPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
+        android:layout_marginTop="8dp"
         android:text="Password : "
-        android:textStyle="bold"
         android:textSize="20sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvUserId" />
 
@@ -58,13 +56,13 @@
         android:id="@+id/tvForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Forgot Password?"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:textColor="@color/blue"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="44dp"
         android:layout_marginTop="20dp"
         android:clickable="true"
+        android:text="Forgot Password?"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
 
@@ -72,15 +70,15 @@
         android:id="@+id/tvCreateAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="12dp"
+        android:clickable="true"
         android:text="Create account"
         android:textColor="@color/blue"
-        android:textStyle="bold"
         android:textSize="15sp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="40dp"
-        android:clickable="true"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvForgotPassword" />
 
     <EditText
         android:id="@+id/etUserIdLogin"
@@ -113,13 +111,16 @@
         android:id="@+id/btnLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#a4d4ae"
         android:text="Log In"
+        android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@+id/tvCreateAccount"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/tvCreateAccount"
-        />
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toEndOf="@+id/tvCreateAccount"
+        app:layout_constraintTop_toTopOf="@+id/tvCreateAccount" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
