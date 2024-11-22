@@ -5,4 +5,6 @@
     <color name="blue">#0037FF</color>
     <color name="lightBlue">#0095FF</color>
     <color name="backgroundGreen">#dfffe0</color>
+    <color name="mainFontColor">#11144c</color>
+    <color name="fontColor">#fabc60</color>
 </resources>
