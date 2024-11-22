@@ -33,6 +33,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
+    private Button btnGoToBMICalculator, btnGoToBMIDisplay;
 
 
     @Override
@@ -49,14 +50,19 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-            final TextView textView = binding.textHome;
-            homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+        final TextView textView = binding.textHome;
+        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-            Button btnGoToBMICalculator = binding.btnGoToBMICalculator;
-            btnGoToBMICalculator.setOnClickListener(view -> goBMI());
+        btnGoToBMIDisplay = binding.btnGoToBMIDisplay;
+        btnGoToBMIDisplay.setOnClickListener(view -> goDisply());
 
-            return root;
+        final Button btnGoToBMICalculator = binding.btnGoToBMICalculator;
+        btnGoToBMICalculator.setOnClickListener(view -> goBMI());
 
+        return root;
+    }
+
+    private void goDisply() {
     }
 
     private void goBMI() {

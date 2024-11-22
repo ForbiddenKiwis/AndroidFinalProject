@@ -60,9 +60,12 @@ public class BMI extends AppCompatActivity implements View.OnClickListener{
         btnCalculate = findViewById(R.id.btnCalculate);
         btnReturn = findViewById(R.id.btnReturn);
         btnBmiClear = findViewById(R.id.btnBmiClear);
+        //btnDisplayAllBMI = findViewById(R.id.btnDisplayAllBMI);
+
+        rgSystem = findViewById(R.id.rgSystem);
 
         btnCalculate.setOnClickListener(this);
-        btnDisplayAllBMI.setOnClickListener(this);
+        //btnDisplayAllBMI.setOnClickListener(this);
         btnReturn.setOnClickListener(this);
         btnBmiClear.setOnClickListener(this);
 
