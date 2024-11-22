@@ -1,5 +1,7 @@
 package com.example.project;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -37,7 +39,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainMenu extends AppCompatActivity implements View.OnClickListener{
 
-    TextView tvUserName;
+    TextView tvUserName, tvLogOut;
     ImageView imgVProfile;
 
     private AppBarConfiguration mAppBarConfiguration;
@@ -96,9 +98,11 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
 
     private void initialize() {
         tvUserName = binding.navView.getHeaderView(0).findViewById(R.id.tvUserName);
+        tvLogOut = binding.navView.getHeaderView(0).findViewById(R.id.tvLogOut);
         imgVProfile = binding.navView.getHeaderView(0).findViewById(R.id.imgVProfile);
 
         imgVProfile.setOnClickListener(this);
+        tvLogOut.setOnClickListener(this);
 
         personDatabase = FirebaseDatabase.getInstance().getReference("Person");
 
@@ -113,6 +117,20 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
     @Override
     public void onClick(View view) {
         imgVProfile.setOnClickListener(v -> goToProfile());
+        tvLogOut.setOnClickListener(v-> Logout());
+    }
+
+    private void Logout() {
+        SharedPreferences sharedPreferences = getSharedPreferences("MyAppsPrefs", MODE_PRIVATE);
+
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.clear();
+        editor.apply();
+
+        Intent intent = new Intent(MainMenu.this, LoginActivity.class);
+        Toast.makeText(this, "User Logout" , Toast.LENGTH_SHORT).show();
+        startActivity(intent);
+        finish();
     }
 
     private void goToProfile() {

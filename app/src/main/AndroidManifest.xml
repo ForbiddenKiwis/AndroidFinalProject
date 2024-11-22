@@ -27,10 +27,6 @@
             android:name=".ForgotPassword"
             android:exported="false" />
         <activity
-            android:name=".ui.login.LoginActivity2"
-            android:exported="false"
-            android:label="@string/title_activity_login2" />
-        <activity
             android:name=".LoginActivity"
             android:exported="true">
             <intent-filter>
