@@ -10,6 +10,7 @@ public class Person {
     public int age;
     public float weight;
     public float height;
+    public float bmi;
 
     //public ArrayList<>
 
@@ -20,6 +21,7 @@ public class Person {
         this.age = age;
         this.weight = weight;
         this.height = height;
+        this.bmi = 0;
     }
 
     public Person(){
@@ -83,4 +85,14 @@ public class Person {
     public void setPersonId(int personId) {
         this.personId = personId;
     }
+
+    public float getBmi() {
+        return bmi;
+    }
+
+    public void setBmi(int bmi) {
+        this.bmi = bmi;
+    }
+
+
 }
