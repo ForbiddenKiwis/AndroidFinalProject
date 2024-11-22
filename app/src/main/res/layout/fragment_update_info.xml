@@ -5,145 +5,189 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundGreen"
     tools:context=".ui.updateInfo.UpdateInfoFragment" >
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="12dp"
+        android:src="@drawable/profiletop"
+        app:layout_constraintBottom_toTopOf="@+id/tvPersonTitle"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <TextView
+        android:id="@+id/tvEditPersonHeight"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="8dp"
+        android:text="Height : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditPersonWeight" />
+
+    <EditText
+        android:id="@+id/etEditPersonName"
+        style="@style/EditText_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:hint="@string/et_edit_person_name"
+        android:inputType="text"
+        app:layout_constraintStart_toEndOf="@+id/tvEditPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/tvPersonTitle" />
+
+    <TextView
+        android:id="@+id/tvEditPersonName"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="12dp"
+        android:text="Person Name : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvPersonTitle" />
+
+    <TextView
+        android:id="@+id/tvEditPersonWeightLbl"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="Kg"
+        app:layout_constraintStart_toEndOf="@+id/etEditPersonWeight"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditPersonAgeLbl" />
+
+    <TextView
+        android:id="@+id/tvEditPersonAge"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="8dp"
+        android:text="Age : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditPersonName" />
+
+    <TextView
+        android:id="@+id/tvEditPersonWeight"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="12dp"
+        android:text="Weight : "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditPersonAge" />
+
+    <TextView
+        android:id="@+id/tvEditPersonHeightLbl"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="cm"
+        app:layout_constraintStart_toEndOf="@+id/etEditPersonHeight"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditPersonWeightLbl" />
+
+    <EditText
+        android:id="@+id/etEditPersonWeight"
+        style="@style/EditText_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="12dp"
+        android:hint="@string/et_edit_person_weight"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/tvEditPersonWeight"
+        app:layout_constraintTop_toBottomOf="@+id/tvEditPersonAgeLbl" />
+
+    <EditText
+        android:id="@+id/etEditPersonHeight"
+        style="@style/EditText_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/et_edit_person_height"
+        android:inputType="numberDecimal"
+        app:layout_constraintStart_toEndOf="@+id/tvEditPersonHeight"
+        app:layout_constraintTop_toBottomOf="@+id/etEditPersonWeight" />
+
+    <TextView
+        android:id="@+id/tvEditPersonAgeLbl"
+        style="@style/Text_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="years old"
+        app:layout_constraintStart_toEndOf="@+id/etEditPersonAge"
+        app:layout_constraintTop_toBottomOf="@+id/etEditPersonName" />
+
+    <EditText
+        android:id="@+id/etEditPersonAge"
+        style="@style/EditText_Style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:hint="@string/et_edit_person_age"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/tvEditPersonAge"
+        app:layout_constraintTop_toBottomOf="@+id/etEditPersonName" />
 
     <TextView
         android:id="@+id/tvPersonTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Edit Person"
+        android:layout_marginTop="344dp"
+        android:text="Edit Profile"
         android:textSize="25sp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/tvEditPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        style="@style/Text_Style"
-        android:text="Person Name : "
-        android:layout_marginTop="50dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvPersonTitle" />
-
-    <TextView
-        android:id="@+id/tvEditPersonAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Age : "
-        style="@style/Text_Style"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEditPersonName"/>
-
-    <TextView
-        android:id="@+id/tvEditPersonWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Weight : "
-        style="@style/Text_Style"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEditPersonAge" />
-
-    <TextView
-        android:id="@+id/tvEditPersonHeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Height : "
-        style="@style/Text_Style"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEditPersonWeight" />
-
-    <TextView
-        android:id="@+id/tvEditPersonAgeLbl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="years old"
-        style="@style/Text_Style"
-        android:layout_marginTop="0dp"
-        app:layout_constraintStart_toEndOf="@+id/etEditPersonAge"
-        app:layout_constraintTop_toTopOf="@+id/etEditPersonAge"/>
-
-    <TextView
-        android:id="@+id/tvEditPersonWeightLbl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kg"
-        style="@style/Text_Style"
-        android:layout_marginTop="0dp"
-        app:layout_constraintStart_toEndOf="@+id/etEditPersonWeight"
-        app:layout_constraintTop_toTopOf="@+id/etEditPersonWeight"/>
-
-    <TextView
-        android:id="@+id/tvEditPersonHeightLbl"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="cm"
-        style="@style/Text_Style"
-        android:layout_marginTop="0dp"
-        app:layout_constraintStart_toEndOf="@+id/etEditPersonHeight"
-        app:layout_constraintTop_toTopOf="@+id/etEditPersonHeight"/>
-
-    <EditText
-        android:id="@+id/etEditPersonName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/et_edit_person_name"
-        style="@style/EditText_Style"
-        android:inputType="text"
-        app:layout_constraintStart_toEndOf="@+id/tvEditPersonName"
-        app:layout_constraintTop_toTopOf="@+id/tvEditPersonName" />
-
-    <EditText
-        android:id="@+id/etEditPersonAge"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/et_edit_person_age"
-        style="@style/EditText_Style"
-        android:inputType="number"
-        app:layout_constraintStart_toEndOf="@+id/tvEditPersonAge"
-        app:layout_constraintTop_toTopOf="@+id/tvEditPersonAge" />
-
-    <EditText
-        android:id="@+id/etEditPersonWeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/et_edit_person_weight"
-        style="@style/EditText_Style"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/tvEditPersonWeight"
-        app:layout_constraintTop_toTopOf="@+id/tvEditPersonWeight" />
-
-    <EditText
-        android:id="@+id/etEditPersonHeight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="@string/et_edit_person_height"
-        style="@style/EditText_Style"
-        android:inputType="numberDecimal"
-        app:layout_constraintStart_toEndOf="@+id/tvEditPersonHeight"
-        app:layout_constraintTop_toTopOf="@+id/tvEditPersonHeight"/>
 
     <Button
         android:id="@+id/btnEditPersonSave"
+        style="@style/Button_Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="20dp"
         android:text="Save"
-        android:layout_marginBottom="10dp"
-        style="@style/Button_Style"
+        android:backgroundTint="#a4d4ae"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvEditPersonHeight" />
 
     <Button
         android:id="@+id/btnEditPersonReturn"
+        style="@style/Button_Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="168dp"
         android:text="Return"
-        style="@style/Button_Style"
-        android:layout_marginStart="40dp"
-        android:layout_marginBottom="10dp"
+        android:backgroundTint="#a4d4ae"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toEndOf="@+id/btnEditPersonSave"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvEditPersonHeight"
+        app:layout_constraintVertical_bias="0.454" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/profilebottom"
+        app:layout_constraintTop_toBottomOf="@+id/btnEditPersonReturn"
+        tools:layout_editor_absoluteX="0dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

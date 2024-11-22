@@ -22,14 +22,28 @@
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <Button
-        android:id="@+id/btnHomeBMI"
+        android:id="@+id/btnGoToBMIDisplay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Find Out Your Bmi"
-        app:layout_constraintBottom_toBottomOf="@+id/text_home"
-        app:layout_constraintEnd_toEndOf="@+id/text_home"
-        app:layout_constraintStart_toStartOf="@+id/text_home"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="BMI Display"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/btnGoToBMICalculator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI Calculator"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
