@@ -4,8 +4,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#0037FF</color>
     <color name="lightBlue">#0095FF</color>
-    <color name="backgroundGreen">#dfffe0</color>
-    <color name="mainFontColor">#11144c</color>
+    <color name="backgroundGreen">#aeca59</color>
+    <color name="mainFontColor">#16240f</color>
     <color name="fontColor">#fabc60</color>
     <color name="red">#e16262</color>
 </resources>

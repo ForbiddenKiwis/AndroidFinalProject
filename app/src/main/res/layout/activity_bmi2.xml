@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/background"
     tools:context=".BMI">
 
 
@@ -23,34 +24,34 @@
         android:id="@+id/tvHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
         android:text="Height: "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:paddingStart="10dp"
-        android:paddingTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"/>
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
 
     <TextView
         android:id="@+id/tvMeasuringUnitHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="20dp"
         android:text="@string/tvHeightMeasuringUnit"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:paddingStart="20dp"
-        app:layout_constraintStart_toEndOf="@+id/etHeight"
-        app:layout_constraintBottom_toTopOf="@+id/etHeight"/>
+        app:layout_constraintBottom_toTopOf="@+id/etHeight"
+        app:layout_constraintStart_toEndOf="@+id/etHeight" />
 
     <TextView
         android:id="@+id/tvWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
         android:text="Weight: "
         android:textSize="20sp"
         android:textStyle="bold"
-        android:paddingStart="10dp"
-        android:paddingTop="10dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHeight" />
 
@@ -58,35 +59,35 @@
         android:id="@+id/tvWeightMeasuringUnit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kg"
-        android:textStyle="bold"
-        android:textSize="20sp"
-        android:paddingTop="10dp"
         android:paddingStart="20dp"
+        android:paddingTop="10dp"
+        android:text="Kg"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/etWeight"
-        app:layout_constraintTop_toBottomOf="@+id/etWeight"/>
+        app:layout_constraintTop_toBottomOf="@+id/etWeight" />
 
     <TextView
         android:id="@+id/tvBMI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Your BMI: "
-        android:textStyle="bold"
-        android:textSize="20sp"
         android:paddingStart="10dp"
         android:paddingTop="10dp"
+        android:text="Your BMI: "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvBMIResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:paddingTop="10dp"
-        android:paddingStart="10dp"
         app:layout_constraintStart_toEndOf="@+id/tvBMI"
         app:layout_constraintTop_toTopOf="@+id/tvBMI" />
 
@@ -94,12 +95,12 @@
         android:id="@+id/etWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="@string/etWeight"
-        android:textStyle="bold"
-        android:textSize="20sp"
         android:background="@null"
+        android:hint="@string/etWeight"
         android:paddingStart="10dp"
         android:paddingTop="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tvHeight"
         app:layout_constraintTop_toTopOf="@+id/tvHeight" />
 
@@ -107,12 +108,12 @@
         android:id="@+id/etHeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="0"
-        android:textSize="20sp"
-        android:textStyle="bold"
         android:background="@null"
+        android:hint="0"
         android:paddingStart="10dp"
         android:paddingTop="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tvWeight"
         app:layout_constraintTop_toTopOf="@+id/tvWeight" />
 
@@ -130,8 +131,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Imperial"
-            android:textStyle="bold"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/rbMetric"
@@ -144,36 +145,35 @@
 
     <Button
         android:id="@+id/btnCalculate"
+        style="@style/Button_Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnCalculate"
         android:textSize="15sp"
-        style="@style/Button_Style"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 
     <Button
         android:id="@+id/btnReturn"
+        style="@style/Button_Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/btnReturn"
-        style="@style/Button_Style"
         android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnBmiClear"
+        style="@style/Button_Style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Clear"
-        style="@style/Button_Style"
         android:layout_marginStart="10dp"
         android:layout_marginBottom="10dp"
+        android:text="Clear"
         app:layout_constraintBottom_toTopOf="@+id/btnCalculate"
-        app:layout_constraintStart_toStartOf="parent"/>
-
+        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

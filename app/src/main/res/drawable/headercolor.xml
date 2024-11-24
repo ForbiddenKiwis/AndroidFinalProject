@@ -3,7 +3,7 @@
 
     <item>
         <shape>
-            <solid android:angle="35" android:color="#3a9679"/>
+            <solid android:angle="35" android:color="#8cb139"/>
         </shape>
     </item>
 </selector>
