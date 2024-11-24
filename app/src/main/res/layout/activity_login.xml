@@ -10,11 +10,12 @@
 
     <ImageView
         android:id="@+id/tvLogo"
-        android:layout_width="397dp"
-        android:layout_height="445dp"
+        android:layout_width="333dp"
+        android:layout_height="342dp"
         app:srcCompat="@drawable/logobmi"
-        tools:layout_editor_absoluteX="7dp"
-        tools:layout_editor_absoluteY="44dp" />
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="39dp"
+        tools:layout_editor_absoluteY="147dp" />
 
     <TextView
         android:id="@+id/tvLogin"
@@ -34,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
-        android:layout_marginTop="76dp"
+        android:layout_marginTop="108dp"
         android:text="User Id : "
         android:textColor="@color/mainFontColor"
         android:textSize="20sp"
@@ -114,7 +115,7 @@
         android:id="@+id/btnLogIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="#5be7a9"
         android:text="Log In"
         android:textColor="@color/mainFontColor"

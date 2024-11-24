@@ -7,4 +7,5 @@
     <color name="backgroundGreen">#dfffe0</color>
     <color name="mainFontColor">#11144c</color>
     <color name="fontColor">#fabc60</color>
+    <color name="red">#e16262</color>
 </resources>
