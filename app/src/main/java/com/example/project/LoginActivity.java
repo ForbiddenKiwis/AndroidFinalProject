@@ -3,8 +3,10 @@ package com.example.project;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,6 +32,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     TextView tvCreateAccount, tvForgotPassword;
     EditText etUserId, etPassword;
     Button btnLogin;
+    CheckBox cbShowPassword;
 
     DatabaseReference  UserDatabase;
 
@@ -53,9 +56,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         etUserId = findViewById(R.id.etUserIdLogin);
         etPassword = findViewById(R.id.etPasswordLogin);
 
+        cbShowPassword = findViewById(R.id.cbShowPassword);
         btnLogin = findViewById(R.id.btnLogIn);
 
         btnLogin.setOnClickListener(this);
+        cbShowPassword.setOnCheckedChangeListener((buttonView, isChecked) -> showPassword(isChecked));
         tvForgotPassword.setOnClickListener(this);
         tvCreateAccount.setOnClickListener(this);
 
@@ -69,6 +74,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (id == R.id.btnLogIn) login(view);
         if (id == R.id.tvCreateAccount) goToCreatePage(view);
         if (id == R.id.tvForgotPassword) goToForgotPage(view);
+    }
+
+    private void showPassword(boolean isChecked) {
+        if (isChecked) {
+            etPassword.setInputType(InputType.TYPE_CLASS_TEXT |InputType.TYPE_TEXT_VARIATION_VISIBLE_PASSWORD);
+        } else {
+            etPassword.setInputType(InputType.TYPE_CLASS_TEXT |InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        }
+        etPassword.setSelection(etPassword.getText().length());
     }
 
     private void goToForgotPage(View view) {

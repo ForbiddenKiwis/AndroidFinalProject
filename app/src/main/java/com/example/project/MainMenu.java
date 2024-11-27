@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Menu;
 import android.widget.Button;
@@ -59,12 +60,12 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMainMenu.toolbar);
-        binding.appBarMainMenu.fab.setOnClickListener(new View.OnClickListener() {
+        binding.appBarMainMenu.toolbar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null)
-                        .setAnchorView(R.id.fab).show();
+                        .setAnchorView(R.id.toolbar).show();
             }
         });
 
@@ -87,6 +88,14 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.action_settings) goToSettings();
         return true;
     }
 
@@ -139,6 +148,12 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
     private void goToProfile() {
         Intent intent = new Intent(MainMenu.this, Profile.class);
         intent.putExtra("personId",personId);
+        startActivity(intent);
+        finish();
+    }
+
+    private void goToSettings() {
+        Intent intent = new Intent(MainMenu.this, Settings.class);
         startActivity(intent);
         finish();
     }
