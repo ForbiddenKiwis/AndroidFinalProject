@@ -5,6 +5,7 @@ import static androidx.core.content.ContextCompat.startActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
@@ -160,9 +161,8 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
     }
 
     private void goToSettings() {
-        Intent intent = new Intent(MainMenu.this, Settings.class);
+        Intent intent = new Intent(android.provider.Settings.ACTION_LOCALE_SETTINGS);
         startActivity(intent);
-        finish();
     }
 
     private void loadName(int personId) {
