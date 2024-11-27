@@ -32,6 +32,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -43,6 +45,8 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
 
     TextView tvUserName, tvLogOut;
     ImageView imgVProfile;
+    DrawerLayout drawerLayout;
+    ActionBarDrawerToggle toggle;
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainMenuBinding binding;
@@ -60,19 +64,10 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarMainMenu.toolbar);
-        binding.appBarMainMenu.toolbar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null)
-                        .setAnchorView(R.id.toolbar).show();
-            }
-        });
-
-        initialize();
-
         DrawerLayout drawer = binding.drawerLayout;
         NavigationView navigationView = binding.navView;
+
+        initialize();
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(
@@ -93,6 +88,11 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (toggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
         int id = item.getItemId();
 
         if (id == R.id.action_settings) goToSettings();
@@ -111,8 +111,15 @@ public class MainMenu extends AppCompatActivity implements View.OnClickListener{
         tvLogOut = binding.navView.getHeaderView(0).findViewById(R.id.tvLogOut);
         imgVProfile = binding.navView.getHeaderView(0).findViewById(R.id.imgVProfile);
 
+        drawerLayout = findViewById(R.id.drawer_layout);
+        toggle = new ActionBarDrawerToggle(this, drawerLayout, binding.appBarMainMenu.toolbar,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+
         imgVProfile.setOnClickListener(this);
         tvLogOut.setOnClickListener(this);
+
+        drawerLayout.addDrawerListener(toggle);
+        toggle.syncState();
 
         personDatabase = FirebaseDatabase.getInstance().getReference("Person");
 
