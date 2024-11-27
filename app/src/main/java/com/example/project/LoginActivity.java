@@ -1,5 +1,6 @@
 package com.example.project;
 
+import android.content.ClipboardManager;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -25,16 +26,22 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import model.CookieHandler;
 import model.User;
 
-public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends CookieHandler implements View.OnClickListener {
 
-    TextView tvCreateAccount, tvForgotPassword;
-    EditText etUserId, etPassword;
-    Button btnLogin;
-    CheckBox cbShowPassword;
+    // Cookies properties
+    private static final String PREFS_NAME = "MyAppPrefs";
+    private static final String KEY_USER_ID = "userId";
+    private static final String KEY_LAST_ACTIVITY = "lastActivity";
 
-    DatabaseReference  UserDatabase;
+    private TextView tvCreateAccount, tvForgotPassword;
+    private EditText etUserId, etPassword;
+    private Button btnLogin;
+    private CheckBox cbShowPassword;
+
+    private DatabaseReference  UserDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +72,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         tvCreateAccount.setOnClickListener(this);
 
         UserDatabase = FirebaseDatabase.getInstance().getReference("User");
+
+        disablePaste(etUserId);
+        disablePaste(etPassword);
     }
 
     @Override
@@ -74,6 +84,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if (id == R.id.btnLogIn) login(view);
         if (id == R.id.tvCreateAccount) goToCreatePage(view);
         if (id == R.id.tvForgotPassword) goToForgotPage(view);
+    }
+
+    // Disabled Clipboard for Security reason
+    private void disablePaste(EditText editText) {
+        editText.setLongClickable(false);
+        editText.setOnTouchListener((v, event) -> {
+            ClipboardManager clipboard = (ClipboardManager) getSystemService(CLIPBOARD_SERVICE);
+            if (clipboard.hasPrimaryClip()) {
+                clipboard.clearPrimaryClip();
+            }
+            return false;
+        });
     }
 
     private void showPassword(boolean isChecked) {
@@ -103,6 +125,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             // Referencing the User base on the UserId to check if it exist.
             DatabaseReference userRef = UserDatabase.child(String.valueOf(userId));
+
             userRef.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -116,9 +139,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                             // Keeps userId session throughout the Application
                             SharedPreferences sharedPreferences = getSharedPreferences(
-                                    "MyAppPrefs", MODE_PRIVATE);
+                                    PREFS_NAME, MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putInt("userId", userId); // Save userId
+                            editor.putInt(KEY_USER_ID, userId); // Save userId
+                            editor.putLong(KEY_LAST_ACTIVITY, System.currentTimeMillis());
                             editor.apply(); // Apply changes
 
                             // Goes to mainMenu activity when login is successful

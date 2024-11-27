@@ -24,9 +24,10 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import model.CookieHandler;
 import model.User;
 
-public class ForgotPassword extends AppCompatActivity implements View.OnClickListener,
+public class ForgotPassword extends CookieHandler implements View.OnClickListener,
         ValueEventListener, ChildEventListener {
 
     TextView tvForgotPasswordPassword, tvForgotPasswordConfirm;

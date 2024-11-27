@@ -29,9 +29,10 @@ import com.google.firebase.database.ValueEventListener;
 
 import com.google.firebase.FirebaseApp;
 
+import model.CookieHandler;
 import model.Person;
 
-public class Profile extends AppCompatActivity implements View.OnClickListener, ValueEventListener {
+public class Profile extends CookieHandler implements View.OnClickListener, ValueEventListener {
 
     TextView tvDisplayPersonNameData, tvDisplayPersonAgeData, tvDisplayPersonWeightData,
             tvDisplayPersonHeightData, tvDeleteAccount;

@@ -22,10 +22,11 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import model.CookieHandler;
 import model.Person;
 import model.User;
 
-public class CreateAccount extends AppCompatActivity implements View.OnClickListener{
+public class CreateAccount extends CookieHandler implements View.OnClickListener{
 
     Button btnCreateAccountReturn, btnCreateAccount;
     TextView tvCreateAccountUserIdData;

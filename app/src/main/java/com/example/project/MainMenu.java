@@ -42,12 +42,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MainMenu extends AppCompatActivity implements View.OnClickListener{
+import model.CookieHandler;
 
-    TextView tvUserName, tvLogOut;
-    ImageView imgVProfile;
-    DrawerLayout drawerLayout;
-    ActionBarDrawerToggle toggle;
+public class MainMenu extends CookieHandler implements View.OnClickListener{
+
+    private static final String PREFS_NAME = "MyAppPrefs";
+    private static final String KEY_USER_ID = "userId";
+
+    private TextView tvUserName, tvLogOut;
+    private ImageView imgVProfile;
+    private DrawerLayout drawerLayout;
+    private ActionBarDrawerToggle toggle;
 
     private AppBarConfiguration mAppBarConfiguration;
     private ActivityMainMenuBinding binding;

@@ -17,9 +17,10 @@ import androidx.core.view.WindowInsetsCompat;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import model.CookieHandler;
 import model.Person;
 
-public class BMI extends AppCompatActivity implements View.OnClickListener{
+public class BMI extends CookieHandler implements View.OnClickListener{
 
     private TextView tvTitle, tvHeight, tvWeight, tvBMI, tvBMIResult;
     private EditText etHeight, etWeight;
