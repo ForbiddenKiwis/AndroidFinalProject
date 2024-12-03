@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="8dp"
         android:paddingStart="20dp"
         android:text="@string/tvHeightMeasuringUnit"
         android:textSize="20sp"
@@ -38,7 +38,7 @@
         android:id="@+id/tvBMI"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="36dp"
         android:paddingStart="10dp"
         android:paddingTop="10dp"
         android:text="Your BMI: "
@@ -47,15 +47,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.656" />
+        app:layout_constraintVertical_bias="0.673" />
 
     <RadioGroup
         android:id="@+id/rgSystem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="16dp"
         android:orientation="horizontal"
         android:paddingTop="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/tvBMI"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvWeight">
 
@@ -167,12 +168,13 @@
         style="@style/Button_Style"
         android:layout_width="130dp"
         android:layout_height="64dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginBottom="188dp"
         android:backgroundTint="#a4d4ae"
         android:text="@string/btnCalculate"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="139dp" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnBmiClear"
@@ -180,12 +182,13 @@
         android:layout_width="130dp"
         android:layout_height="64dp"
         android:layout_marginEnd="52dp"
+        android:layout_marginBottom="188dp"
         android:backgroundTint="#a4d4ae"
         android:text="Clear"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/btnCalculate"
-        app:layout_constraintHorizontal_bias="0.207"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="582dp" />
+        app:layout_constraintHorizontal_bias="0.096"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnReturn"
@@ -193,30 +196,39 @@
         android:layout_width="130dp"
         android:layout_height="64dp"
         android:layout_marginEnd="52dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="188dp"
         android:backgroundTint="#a4d4ae"
         android:text="@string/btnReturn"
         android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.196"
         app:layout_constraintStart_toEndOf="@+id/btnCalculate" />
 
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="386dp"
         android:layout_height="387dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/topbmi"
-        tools:layout_editor_absoluteX="12dp"
         tools:layout_editor_absoluteY="-21dp" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
     <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="375dp"
-        android:layout_height="275dp"
-        app:srcCompat="@drawable/bottombmi"
-        tools:layout_editor_absoluteX="18dp"
-        tools:layout_editor_absoluteY="620dp" />
+        android:id="@+id/imageView15"
+        android:layout_width="389dp"
+        android:layout_height="206dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/bottombmi" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
