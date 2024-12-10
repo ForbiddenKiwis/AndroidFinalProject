@@ -81,7 +81,7 @@
                         android:drawableStart="@drawable/user"
                         android:drawablePadding="10dp"
                         android:ems="10"
-                        android:hint="username"
+                        android:hint="user id"
                         android:inputType="text"
                         android:paddingStart="1dp"
                         android:textColorHint="#000000"

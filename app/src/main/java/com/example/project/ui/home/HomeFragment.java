@@ -50,11 +50,11 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
+//        final TextView textView = binding.textHome;
+//        homeViewModel.getText().observe(getViewLifecycleOwner(), textView::setText);
 
-        btnGoToBMIDisplay = binding.btnGoToBMIDisplay;
-        btnGoToBMIDisplay.setOnClickListener(view -> goDisply());
+        btnGoToBMICalculator = binding.btnGoToBMICalculator;
+        btnGoToBMICalculator.setOnClickListener(view -> goDisply());
 
         final Button btnGoToBMICalculator = binding.btnGoToBMICalculator;
         btnGoToBMICalculator.setOnClickListener(view -> goBMI());

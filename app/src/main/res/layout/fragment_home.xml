@@ -1,104 +1,126 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:scrollbars="none"
     tools:context=".ui.home.HomeFragment">
 
-
-    <TextView
-        android:id="@+id/textHome"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="casual"
-        android:text="Menue"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.227" />
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/cardview">
 
-    <Button
-        android:id="@+id/btnGoToBMIDisplay"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="64dp"
-        android:background="@android:color/transparent"
-        android:fontFamily="@font/alexandria"
-        android:text="BMI History"
-        android:textColor="@color/mainFontColor"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.118"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnGoToBMICalculator" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="@color/backgroundGreen"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="50dp">
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="84dp"
-        android:layout_height="83dp"
-        android:layout_marginStart="80dp"
-        android:src="@drawable/pick"
-        app:layout_constraintStart_toEndOf="@id/btnGoToBMICalculator"
-        app:layout_constraintTop_toTopOf="@id/btnGoToBMICalculator" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/apple" />
 
-    <Button
-        android:id="@+id/btnGoToBMICalculator"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="248dp"
-        android:background="@android:color/transparent"
-        android:fontFamily="@font/alexandria"
-        android:text="BMI Calculator"
-        android:textColor="@color/mainFontColor"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="@id/textHome"
-        app:layout_constraintHorizontal_bias="0.17"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+                <Button
+                    android:id="@+id/btnGoToBMICalculator"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Calculate BMI"
+                    android:textColor="@color/mainFontColor"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/alexandria"
+                    android:gravity="center"
+                    android:textSize="28sp"
+                    android:backgroundTint="@color/backgroundGreen"
+                    android:elevation="0dp" />
 
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="82dp"
-        android:layout_height="79dp"
-        android:layout_marginStart="84dp"
-        android:src="@drawable/diet"
-        app:layout_constraintStart_toEndOf="@id/btnGoToBMIDisplay"
-        app:layout_constraintTop_toTopOf="@id/btnGoToBMIDisplay" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="50dp"
-        android:layout_marginTop="56dp"
-        android:background="@android:color/transparent"
-        android:fontFamily="@font/alexandria"
-        android:text="BMI Magazine"
-        android:textColor="@color/mainFontColor"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.125"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnGoToBMIDisplay" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="@color/backgroundGreen"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="50dp">
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="82dp"
-        android:layout_height="78dp"
-        android:layout_marginStart="64dp"
-        android:src="@drawable/apple"
-        app:layout_constraintStart_toEndOf="@id/button3"
-        app:layout_constraintTop_toTopOf="@id/button3" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
 
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/diet" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Your BMI History"
+                    android:textColor="@color/mainFontColor"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/alexandria"
+                    android:gravity="center"
+                    android:textSize="28sp"
+                    android:backgroundTint="@color/backgroundGreen"
+                    android:elevation="0dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="280dp"
+            android:layout_height="280dp"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="@color/backgroundGreen"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="50dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/eating" />
+
+                <Button
+                    android:id="@+id/btn4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="BMI Magazine"
+                    android:textColor="@color/mainFontColor"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/alexandria"
+                    android:gravity="center"
+                    android:textSize="28sp"
+                    android:backgroundTint="@color/backgroundGreen"
+                    android:elevation="0dp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
