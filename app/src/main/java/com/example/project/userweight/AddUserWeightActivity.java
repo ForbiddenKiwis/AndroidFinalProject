@@ -1,5 +1,6 @@
 package com.example.project.userweight;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -70,6 +71,7 @@ public class AddUserWeightActivity extends AppCompatActivity implements View.OnC
     }
 
     private void ViewUserWeight(){
-
+        Intent intent = new Intent(this, UserWeightListActivity.class);
+        startActivity(intent);
     }
 }
