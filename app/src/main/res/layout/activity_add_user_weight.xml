@@ -8,6 +8,38 @@
     tools:context=".userweight.AddUserWeightActivity">
 
     <TextView
+        android:id="@+id/tvAddUserWeigthTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Log"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvAddUserWeightId"
+        android:textStyle="bold"
+        android:textSize="50sp"/>
+
+    <TextView
+        android:id="@+id/tvAddUserWeightId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Id"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/tvAddUserWeight"
+        android:paddingLeft="50dp"
+        android:paddingBottom="10dp"/>
+
+    <EditText
+        android:id="@+id/edAddUserWeightId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:text="..........."
+        app:layout_constraintLeft_toRightOf="@+id/tvAddUserWeightId"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvAddUserWeightId"
+        />
+
+    <TextView
         android:id="@+id/tvAddUserWeight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,7 +55,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text=""
+        android:text="..........."
         app:layout_constraintLeft_toRightOf="@+id/tvAddUserWeight"
         app:layout_constraintBaseline_toBaselineOf="@+id/tvAddUserWeight"
         />
@@ -34,6 +66,16 @@
         android:layout_height="wrap_content"
         android:text="Save"
         app:layout_constraintLeft_toLeftOf="parent"
+       app:layout_constraintRight_toLeftOf="@+id/btnViewUserWeight"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <Button
+        android:id="@+id/btnViewUserWeight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View Log"
+        app:layout_constraintLeft_toRightOf="@+id/btnAddUserWeight"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
