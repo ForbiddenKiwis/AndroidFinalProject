@@ -33,8 +33,7 @@ public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private FragmentHomeBinding binding;
-    private Button btnGoToBMICalculator, btnGoToBMIDisplay;
-
+    private Button btnGoToBMICalculator, btnGoToBMIDisplay, btnGoToBMIMagazine;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -58,6 +57,12 @@ public class HomeFragment extends Fragment {
 
         final Button btnGoToBMICalculator = binding.btnGoToBMICalculator;
         btnGoToBMICalculator.setOnClickListener(view -> goBMI());
+
+        btnGoToBMIMagazine = binding.btnGoToBMIMagazine;
+        btnGoToBMIMagazine.setOnClickListener(View -> goDisply());
+
+        final Button btnGoToBMIMagazine = binding.btnGoToBMIMagazine;
+
 
         return root;
     }

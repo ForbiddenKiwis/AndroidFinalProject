@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:context=".ui.home.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:background="@drawable/cardview">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:cardBackgroundColor="@color/backgroundGreen"
+            app:cardCornerRadius="25dp"
+            app:cardElevation="8dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/eating" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp">
+
+                    <TextView
+                        android:id="@+id/btnGoToBMICalculator"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="BMI: Beyond the Numbers!\n\nEver wondered what your body weight has to do with math? Welcome to the quirky world of BMI—Body Mass Index, where science meets simplicity!\n\nWhat’s Your Number?\n\n• Under 18.5: Eats like a bird.\n• 18.5 - 24.9: Goldilocks zone—just right!\n• 25 - 29.9: A tad cozy? Time to shake things up!\n• 30 and above: Living large, but maybe time to balance the scales.\n\nRemember, BMI is just a guide, not a judge. Pair it with a balanced diet and regular exercise for a happy, thriving body."
+                        android:textColor="@color/mainFontColor"
+                        android:fontFamily="@font/alexandria"
+                        android:gravity="center"
+                        android:textSize="18sp" />
+
+                </ScrollView>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+</ScrollView>
