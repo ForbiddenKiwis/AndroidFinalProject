@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="..........."
+        android:text=""
         app:layout_constraintLeft_toRightOf="@+id/tvAddUserWeightId"
         app:layout_constraintBaseline_toBaselineOf="@+id/tvAddUserWeightId"
         />
@@ -55,7 +55,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="text"
-        android:text="..........."
+        android:text=""
         app:layout_constraintLeft_toRightOf="@+id/tvAddUserWeight"
         app:layout_constraintBaseline_toBaselineOf="@+id/tvAddUserWeight"
         />
