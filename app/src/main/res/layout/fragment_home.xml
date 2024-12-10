@@ -31,7 +31,7 @@
         android:layout_marginTop="64dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/alexandria"
-        android:text="BMI History"
+        android:text="Weight Log"
         android:textColor="@color/mainFontColor"
         android:textSize="16sp"
         android:textStyle="bold"

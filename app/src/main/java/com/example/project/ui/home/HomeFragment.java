@@ -25,6 +25,7 @@ import androidx.navigation.Navigation;
 import com.example.project.BMI;
 import com.example.project.R;
 import com.example.project.databinding.FragmentHomeBinding;
+import com.example.project.userweight.AddUserWeightActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -63,6 +64,8 @@ public class HomeFragment extends Fragment {
     }
 
     private void goDisply() {
+        Intent intent = new Intent(requireActivity(), AddUserWeightActivity.class);
+        startActivity(intent);
     }
 
     private void goBMI() {
